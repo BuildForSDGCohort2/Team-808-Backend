@@ -1,0 +1,78 @@
+
+
+    {% extends 'layout.html' %}
+
+    {% block content %}
+
+    <nav class="navbar navbar-expand-lg navbar-light  sticky-top ">
+      <div class="container">
+    <a class="navbar-brand" href="#"><img src="{{url_for('static', filename='images/logo.png')}}" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav justify-content-end ml-auto">
+      
+       
+        
+          <li class="nav-item text-uppercase">
+            <a class="nav-link" href="/about">about</a>
+          </li>
+         
+         
+          
+          {% if current_user.is_authenticated %}
+          <li class="nav-item text-uppercase">
+            <a class="nav-link" href="/allpatient">Find Patient</a>
+          </li>
+         
+              <li class="nav-item text-uppercase">
+                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+               
+              {% else %}
+              <li class="nav-item text-uppercase">
+                <a class="nav-link" href="/register">signup</a>
+              </li>
+             
+                  <li class="nav-item text-uppercase">
+                      <a class="nav-link" href="/login">login</a>
+                    </li>
+              {% endif %}
+      
+          
+        
+            
+       </ul>
+    </div>
+  </div>
+  </nav>
+
+  
+
+ 
+<section class="welcome  ">
+  <div class="container  ">
+    <div class="card mb-3 border-0" >
+      
+      <div class="row no-gutters ">
+        <div class="col-md-6">
+
+          <img src="{{url_for('static', filename='images/main.png')}}" class="card-img">  
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h1 class="text-center text-capitalize">Find patient</h1>
+
+            <h3 class="card-title text-capitalize">patient test and medical imaging</h3>
+            <a class=" rounded-pill  text-uppercase "  href="/register" role="button">Get Started</a>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  {% endblock content %}
