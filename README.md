@@ -18,6 +18,19 @@ Lost by the patient
 
 https://patient-medical-test.herokuapp.com/
 
-#### License & copyright
+#### Installation
+
+
+```bash
+pip install 
+```
+
+#### Run the server
+
+```bash
+python manage.py runserver
+```
+
+##### Contributor
 
 BuildForSDG Team-808
