@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<section class="about">
+  <div  class="container padding ">
+
+    <h2 class="text-center text-capitalize"> Patients Test and Results</h2>
+  
+    {% for patient in object_list %}
+    
+        <div class="card mb-3"  >
+          <div class="row no-gutters" >
+           
+            <div class="col-md-5">
+              
+               {% if patient.file_image %}
+
+                   <img src="{{ patient.file_image.url }}" class="medical_imaging">
+              {% endif %}
+            
+            </div>
+            <div class="col-md-5">
+                </a>
+                  <h5 class="card-title"><b>Names:</b> {{patient.patient_names}} | <b>Test:</b> {{ patient.test }}</h5>
+                <p class="card-text"><b>Doctor:</b> {{ patient.dr_names }}   </p>
+                <p class="card-text"><b>Age:</b> {{ patient.age }} | <b>Gender:</b> {{ patient.gender }}</p>
+                <p class="card-text"><b>Result:</b> {{ patient.result }}</p> 
+                <p><a href="{% url 'patient-detail' patient.pk %}  " class="btn btn-secondary"> View More</a></p>
+              </div>
+              
+      
+              
+            </div>
+          </div>
+          {% endfor%}
+        </div>
+      </section>
+        {%  endblock %}

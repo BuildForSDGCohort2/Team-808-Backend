@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ 
+  <section class="about">
+
+    <h2 class="text-center text-capitalize"> Patients Test and Results</h2>
+  
+    <div class="container padding">
+    
+        <div class="card mb-3"  >
+          <div class="row no-gutters">
+           
+            <div class="col-md-5">
+              
+              <img src="{{ patient.file_image.url }}" >
+            
+            </div>
+            <div class="col-md-5">
+                <h5 class="card-title"><b>Names:</b> {{patient.patient_names}}</h5>
+                <p class="card-text"><b>Test:</b> {{ patient.test }}   </p>
+                <p class="card-text"><b>Doctor:</b> {{ patient.dr_names }}   </p>
+                <p class="card-text"><b>Gender:</b> {{ patient.gender }}   </p>
+                <p class="card-text"><b>Age:</b> {{ patient.age }} </p>
+                <p class="card-text"><b>Result:</b> {{ patient.result }}</p>
+                <br>
+               <p><a href="{% url 'update_patient' patient.pk %}" class="btn-signup">Update </a>  | 
+                <a href="{% url 'delete_patient' patient.pk %}" class="btn-signup">Remove Patient</a>
+               </p>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+        {%  endblock %}
+
+
+
+

@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="welcome  ">
+  <div class="container  ">
+    <div class="card mb-3 border-0" >
+      
+      <div class="row no-gutters ">
+        <div class="col-md-6">
+
+          <img src="{% static 'sdgapp/images/main.png' %}" class="card-img">  
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h1 class="text-center text-capitalize">Find patient</h1>
+
+            <h3 class="card-title text-capitalize">patient test and medical imaging</h3>
+           
+                <a class=" rounded-pill  text-uppercase "  href="{% url 'register' %}" role="button">Get Started</a>
+              
+  
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  {%  endblock %}

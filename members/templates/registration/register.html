@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<section class="about">
+
+    <h2 class="text-center text-capitalize">Create Account</h2>           
+    
+<div  class="container padding col-md-7">
+   
+    <div class="form-group">
+    <form method="POST"     class="col-md-8"  >
+        
+     {% csrf_token %}  
+     {{ form.as_p}} 
+     
+
+<button class="btn-signup">Register</button>
+</div>
+
+       
+        </div>
+            
+           
+    </section>
+            
+        
+
+        {%  endblock %}
